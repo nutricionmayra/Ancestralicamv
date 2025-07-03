@@ -54,8 +54,25 @@
     <button type="button" onclick="calcularAporteNutricional()">Calcular Aporte Nutricional</button>
     <div id="aporte-nutricional"></div>
     <div id="resultados"></div>
-  </div>
+    </div>
+    <hr />
+<h2>Evaluación Nutricional de Ingredientes</h2>
 
+<!-- Contenedor donde se mostrará la lista de alimentos -->
+<div id="seleccion-alimentos"></div>
+
+<!-- Botón para calcular el aporte nutricional -->
+<button type="button" onclick="calcularAporteNutricional()">Calcular Aporte Nutricional</button>
+
+<!-- Contenedor de resultados -->
+<div id="aporte-nutricional"></div>
+
+<!-- Llamado al archivo JS de nutrientes -->
+<script src="nutrientes.js"></script>
+<script>
+  mostrarSeleccionAlimentos();
+</script>
+  
   <script src="script.js"></script>
   <script src="nutrientes.js"></script>
   <script>mostrarSeleccionAlimentos();</script>
