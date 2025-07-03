@@ -1,0 +1,14 @@
+
+{
+  "name": "Calculadora BARF Profesional",
+  "short_name": "BARF Pro",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "Calculadora nutricional profesional para dietas BARF personalizadas.",
+  "icons": [{
+    "src": "icon.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }]
+}
