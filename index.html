@@ -5,19 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Calculadora Nutricional BARF Profesional</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- ✅ Manifest para PWA -->
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#4CAF50" />
-  <link rel="icon" href="icon-192.png" />
 </head>
 <body>
   <div class="container">
     <h1>Calculadora Nutricional BARF Profesional</h1>
-
+    
     <form id="nutricion-form">
       <h2>Datos del Animal</h2>
-
+      
       <label>Peso (kg): <input type="number" id="peso" required /></label>
 
       <label>Edad:
@@ -53,38 +48,34 @@
 
       <button type="button" onclick="calcularRacionBase()">Calcular Ración Base</button>
       <button type="button" onclick="calcularDistribucion()">Calcular Distribución en gramos</button>
-    </form>
 
-    <div id="resultados"></div>
-
-    <hr />
-    <h2>Evaluación Nutricional de Ingredientes</h2>
 
     <div id="seleccion-alimentos"></div>
-
     <button type="button" onclick="calcularAporteNutricional()">Calcular Aporte Nutricional</button>
-
     <div id="aporte-nutricional"></div>
-  </div>
+    <div id="resultados"></div>
+    </div>
+    <hr />
+<h2>Evaluación Nutricional de Ingredientes</h2>
 
-  <!-- ✅ Scripts -->
-  <script src="scripts.js"></script>
-  <script src="nutrientes.js"></script>
+<!-- Contenedor donde se mostrará la lista de alimentos -->
+<div id="seleccion-alimentos"></div>
 
-  <!-- ✅ Registro del Service Worker para PWA -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(reg => console.log('Service Worker registrado:', reg.scope))
-          .catch(err => console.error('Error al registrar el Service Worker:', err));
-      });
-    }
+<!-- Botón para calcular el aporte nutricional -->
+<button type="button" onclick="calcularAporteNutricional()">Calcular Aporte Nutricional</button>
 
-    // Iniciar campos dinámicos
-    if (typeof mostrarSeleccionAlimentos === 'function') {
-      mostrarSeleccionAlimentos();
-    }
-  </script>
+<!-- Contenedor de resultados -->
+<div id="aporte-nutricional"></div>
+
+<!-- Llamado al archivo JS de nutrientes -->
+<script src="nutrientes.js"></script>
+<script>
+  mostrarSeleccionAlimentos();
+</script>
+  
+  <script src="script.js"></script>
+  <script src="nutrientes.j
+s"></script>
+  <script>mostrarSeleccionAlimentos();</script>
 </body>
 </html>
