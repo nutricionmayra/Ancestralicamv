@@ -1,41 +1,62 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Nutricional BARF Profesional</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora Nutricional BARF Profesional</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Calculadora Nutricional BARF Profesional</h1>
-        <form id="nutricion-form">
-            <h2>Datos del Animal</h2>
-            <label>Peso (kg): <input type="number" id="peso" required></label>
-            <label>Edad (meses): <input type="number" id="edad" required></label>
-            <label>Actividad:
-                <select id="actividad">
-                    <option value="baja">Baja</option>
-                    <option value="media" selected>Media</option>
-                    <option value="alta">Alta</option>
-                </select>
-            </label>
-            <h2>Composición de la Dieta (%)</h2>
-            <label>Carne magra: <input type="number" id="carne" required></label>
-            <label>Hueso carnoso: <input type="number" id="hueso" required></label>
-            <label>Vísceras: <input type="number" id="visceras" required></label>
-            <label>Frutas y verduras: <input type="number" id="vegetales" required></label>
-            <label>Carbohidratos (opcional): <input type="number" id="carbohidratos"></label>
-            <button type="button" onclick="calcularDieta()">Calcular</button>
-        
+  <div class="container">
+    <h1>Calculadora Nutricional BARF Profesional</h1>
+    
+    <form id="nutricion-form">
+      <h2>Datos del Animal</h2>
+      
+      <label>Peso (kg): <input type="number" id="peso" required /></label>
+
+      <label>Edad:
+        <input type="number" id="edad-anios" placeholder="Años" style="width:48%;" min="0" />
+        <input type="number" id="edad-meses" placeholder="Meses" style="width:48%;" min="0" />
+      </label>
+
+      <label>Etapa de vida:
+        <select id="etapa">
+          <option value="cachorro">Cachorro</option>
+          <option value="adulto" selected>Adulto</option>
+          <option value="gestante">Gestante</option>
+          <option value="lactancia">Lactancia</option>
+          <option value="esterilizado">Esterilizado</option>
+          <option value="senior">Senior</option>
+        </select>
+      </label>
+
+      <label>Actividad:
+        <select id="actividad">
+          <option value="baja">Baja</option>
+          <option value="media" selected>Media</option>
+          <option value="alta">Alta</option>
+        </select>
+      </label>
+
+      <h2>Composición de la Dieta (%)</h2>
+      <label>Carne magra: <input type="number" id="carne" required /></label>
+      <label>Hueso carnoso: <input type="number" id="hueso" required /></label>
+      <label>Vísceras: <input type="number" id="visceras" required /></label>
+      <label>Frutas y verduras: <input type="number" id="vegetales" required /></label>
+      <label>Carbohidratos (opcional): <input type="number" id="carbohidratos" /></label>
+
+      <button type="button" onclick="calcularDieta()">Calcular Dieta</button>
     </form>
+
     <div id="seleccion-alimentos"></div>
     <button type="button" onclick="calcularAporteNutricional()">Calcular Aporte Nutricional</button>
     <div id="aporte-nutricional"></div>
-    
-        <div id="resultados"></div>
-    </div>
-    <script src="script.js"></script>
-<script src="nutrientes.js"></script><script>mostrarSeleccionAlimentos();</script></body>
+    <div id="resultados"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="nutrientes.js"></script>
+  <script>mostrarSeleccionAlimentos();</script>
+</body>
 </html>
